@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayesiga Abel | Skills</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="portfolio.css">
+    <style>
+        /* Credentials column matches the height of the right column */
+        .skills-layout { align-items: stretch; }
+
+        .cert-col {
+            display: flex;
+            flex-direction: column;
+        }
+        .cert-col .cert-badge {
+            flex: 1 1 auto;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .cert-text { display: flex; flex-direction: column; gap: 3px; }
+        .cert-text small {
+            font-size: 0.78rem;
+            line-height: 1.5;
+            color: var(--muted, #6c757d);
+            font-weight: 400;
+        }
+
+        /* Project link */
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 10px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            text-decoration: none;
+            color: var(--red, currentColor);
+        }
+        .project-link:hover { text-decoration: underline; }
+        .project-link i { font-size: 0.7rem; }
+
+        @media (max-width: 768px) {
+            .cert-col .cert-badge { flex: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="brand">
+                <span class="brand-mark"><b>A</b><i>A</i></span>
+                <span class="brand-text"><strong>Ayesiga Abel</strong><small>IT Specialist</small></span>
+            </a>
+            <nav class="main-nav" id="main-nav" aria-label="Main">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="experience.html">Experience</a></li>
+                    <li><a href="skills.html" class="active">Skills</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="certificates.html">Certificates</a></li>
+                    <!-- TODO: add your CV to the project folder as cv.pdf (or change this link) -->
+                    <li class="nav-cta-mobile"><a href="cv.pdf" class="btn btn-red" download>Download CV</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <!-- TODO: add your CV to the project folder as cv.pdf (or change this link) -->
+                <a href="cv.pdf" class="btn btn-red header-cta" download>Download CV <i class="fas fa-download"></i></a>
+                <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-head">
+            <div class="container">
+                <p class="eyebrow red">Capabilities</p>
+                <h1 class="section-title">Skills &amp; <em>Certifications</em></h1>
+            </div>
+        </section>
+
+        <section class="section alt" style="padding-top:56px;">
+            <div class="container skills-layout">
+
+                <!-- Certifications -->
+                <div class="cert-col">
+                    <p class="eyebrow red" style="margin-bottom:20px;">Credentials</p>
+
+                    <div class="cert-badge">
+                        <i class="fas fa-award"></i>
+                        <div class="cert-text">
+                            <span>CISCO Associate</span>
+                            <small>Core Cisco networking and support fundamentals.</small>
+                        </div>
+                    </div>
+                    <div class="cert-badge">
+                        <i class="fas fa-award"></i>
+                        <div class="cert-text">
+                            <span>CISCO Customer Support Certified</span>
+                            <small>Handling customer issues and escalations professionally.</small>
+                        </div>
+                    </div>
+                    <div class="cert-badge">
+                        <i class="fas fa-shield-alt"></i>
+                        <div class="cert-text">
+                            <span>Fortinet Certified Associate (FCA) &amp; Fortinet Networking</span>
+                            <small>Cybersecurity fundamentals and FortiGate firewall networking.</small>
+                        </div>
+                    </div>
+                    <div class="cert-badge">
+                        <i class="fas fa-network-wired"></i>
+                        <div class="cert-text">
+                            <span>CCNA — Cisco Certified Network Associate</span>
+                            <small>Routing, switching and network troubleshooting.</small>
+                        </div>
+                    </div>
+                    <div class="cert-badge">
+                        <i class="fas fa-search"></i>
+                        <div class="cert-text">
+                            <span>ISACA Digital Forensics</span>
+                            <small>Collecting and handling digital evidence in investigations.</small>
+                        </div>
+                    </div>
+                    <div class="cert-badge">
+                        <i class="fas fa-clipboard-check"></i>
+                        <div class="cert-text">
+                            <span>ISO 27001 Lead Auditor</span>
+                            <small>Auditing information security management systems against ISO 27001.</small>
+                        </div>
+                    </div>
+                    <div class="cert-badge">
+                        <i class="fas fa-shield-alt"></i>
+                        <div class="cert-text">
+                            <span>MSP BitDefender Certified</span>
+                            <small>Managing endpoint protection through the Bitdefender MSP cloud console.</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technical Skills & Projects -->
+                <div>
+                    <p class="eyebrow red" style="margin-bottom:20px;">What I Do</p>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><i class="fas fa-network-wired"></i> Computer Networking</span>
+                        <span class="skill-tag"><i class="fas fa-tools"></i> Troubleshooting</span>
+                        <span class="skill-tag"><i class="fas fa-lock"></i> Cybersecurity</span>
+                        <span class="skill-tag"><i class="fas fa-server"></i> System Administration</span>
+                        <span class="skill-tag"><i class="fas fa-cloud"></i> ICT Infrastructure</span>
+                        <span class="skill-tag"><i class="fas fa-search"></i> IT Auditing</span>
+                        <span class="skill-tag"><i class="fas fa-headset"></i> IT Support</span>
+                        <span class="skill-tag"><i class="fas fa-fire-alt"></i> FortiGate Operations</span>
+                        <span class="skill-tag"><i class="fas fa-paint-brush"></i> Graphics &amp; Design</span>
+                        <span class="skill-tag"><i class="fas fa-microchip"></i> Computer Hardware Mechanics</span>
+                        <span class="skill-tag"><i class="fas fa-database"></i> Database Administration</span>
+                        <span class="skill-tag"><i class="fas fa-video"></i> Camera Installation &amp; Maintenance</span>
+                    </div>
+
+                    <!-- Projects Section -->
+                    <div class="projects-section" id="projects" style="margin-top: 44px; scroll-margin-top: 100px;">
+                        <p class="eyebrow red" style="margin-bottom:20px;">Personal Projects</p>
+
+                        <div class="project-card" style="margin-bottom: 18px;">
+                            <!-- TODO: add your screenshot as images/maceo-dashboard.jpg -->
+                            <div class="project-shot">
+                                <img src="images/maceo-dashboard.jpg" alt="Maceo Acc System dashboard" onclick="openLightbox(this.src,'Maceo Acc System — Dashboard')" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <div class="project-shot-placeholder" style="display:none;">
+                                    <i class="fas fa-image"></i>
+                                    <span>Dashboard screenshot coming soon</span>
+                                    <small>images/maceo-dashboard.jpg</small>
+                                </div>
+                            </div>
+                            <h3 class="project-name" style="margin-bottom: 8px;"><i class="fas fa-diagram-project"></i> Maceo Acc System</h3>
+                            <p class="project-description">Designed a system that almost looks like a shop system.</p>
+                            <!-- TODO: replace the href with your project overview link -->
+                            <a href="Maceo.html" class="project-link" target="_blank" rel="noopener noreferrer">
+                                View project overview <i class="fas fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+
+                        <div class="project-card" style="margin-bottom: 18px;">
+                            <!-- TODO: add your screenshot as images/ktech-dashboard.jpg -->
+                            <div class="project-shot">
+                                <img src="images/ktech-dashboard.jpg" alt="Ktech Support System dashboard" onclick="openLightbox(this.src,'Ktech Support System — Dashboard')" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <div class="project-shot-placeholder" style="display:none;">
+                                    <i class="fas fa-image"></i>
+                                    <span>Dashboard screenshot coming soon</span>
+                                    <small>images/ktech-dashboard.jpg</small>
+                                </div>
+                            </div>
+                            <h3 class="project-name" style="margin-bottom: 8px;"><i class="fas fa-headset"></i> Ktech Support System</h3>
+                            <p class="project-description">An IT support system for IT Support Tickets.</p>
+                            <!-- TODO: replace the href with your project overview link -->
+                            <a href="Ktech.html" class="project-link" target="_blank" rel="noopener noreferrer">
+                                View project overview <i class="fas fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <img id="lightbox-img" src="" alt="Project screenshot">
+        <div class="lightbox-caption" id="lightbox-caption"></div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Ayesiga Abel · Entebbe, Uganda</p>
+            <p>Designed with <i class="fas fa-heart"></i> for connections.</p>
+        </div>
+    </footer>
+
+    <script src="site.js"></script>
+    <script>
+        function openLightbox(src, caption) {
+            if (!src) return;
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox-caption').textContent = caption;
+            document.getElementById('lightbox').classList.add('open');
+        }
+        function closeLightbox(event) {
+            if (!event || event.target === document.getElementById('lightbox') || event.target.classList.contains('lightbox-close')) {
+                document.getElementById('lightbox').classList.remove('open');
+            }
+        }
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
