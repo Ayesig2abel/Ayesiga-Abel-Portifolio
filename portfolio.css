@@ -877,7 +877,7 @@ ul { list-style: none; }
 .exp-card {
     display: flex;
     flex-direction: column;
-    min-height: 390px;       /* collapsed height shared by all cards - adjust to taste */
+   /* min-height: 390px;  /* collapsed height shared by all cards - adjust to taste */
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 6px;
 }
