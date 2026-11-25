@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayesiga Abel | Experience</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="portfolio.css">
+    <style>
+        /* ── Grid: each card keeps its own height when opened ── */
+        .exp-grid {
+            align-items: start;
+        }
+
+        /* ── Compact role cards ── */
+        .exp-card {
+            display: flex;
+            flex-direction: column;
+            padding: 24px 26px;
+        }
+        .exp-title { min-height: 2.8em; }
+        .exp-dates {
+            font-size: 0.72rem;
+            opacity: 0.65;
+            margin-top: 3px;
+        }
+        .exp-points {
+            list-style: none;
+            padding: 0;
+            margin: 12px 0 0;
+        }
+        .exp-points li {
+            position: relative;
+            padding-left: 16px;
+            font-size: 0.8rem;
+            line-height: 1.5;
+            margin-bottom: 4px;
+            opacity: 0.85;
+        }
+        .exp-points li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 0.68rem;
+            opacity: 0.8;
+        }
+
+        /* ── "More responsibilities" expander ── */
+        .exp-more { margin-top: auto; padding-top: 10px; }
+        .exp-more summary {
+            cursor: pointer;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            list-style: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--red, inherit);
+        }
+        .exp-more summary::-webkit-details-marker { display: none; }
+        .exp-more summary::after {
+            content: "\f078";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            font-size: 0.6rem;
+            transition: transform 0.2s;
+        }
+        .exp-more[open] summary::after { transform: rotate(180deg); }
+        .exp-more .exp-points { margin-top: 8px; }
+
+        /* ── Professional Skills (horizontal card) ── */
+        .skills-wide-card {
+            margin: 30px 0 36px;
+            padding: 30px 32px;
+        }
+        .skills-wide-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.35rem;
+            margin: 4px 0 22px;
+        }
+        .skills-wide-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px 28px;
+        }
+        .skills-wide-item strong {
+            display: block;
+            font-size: 0.88rem;
+            margin-bottom: 4px;
+        }
+        .skills-wide-item strong i {
+            margin-right: 8px;
+            color: var(--red, inherit);
+            width: 16px;
+            text-align: center;
+        }
+        .skills-wide-item span {
+            font-size: 0.8rem;
+            line-height: 1.6;
+            opacity: 0.8;
+        }
+        .skills-wide-tools {
+            margin-top: 26px;
+            padding-top: 20px;
+            border-top: 1px solid color-mix(in srgb, currentColor 15%, transparent);
+        }
+        .skills-wide-tools-label {
+            display: block;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            color: var(--red, inherit);
+        }
+        .skills-wide-tools .tool-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        .skills-wide-tools .tool-chips span {
+            font-size: 0.72rem;
+            font-weight: 600;
+            padding: 4px 11px;
+            border-radius: 20px;
+            background: color-mix(in srgb, currentColor 12%, transparent);
+        }
+
+        @media (max-width: 900px) {
+            .skills-wide-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .skills-wide-card { padding: 24px 20px; }
+            .skills-wide-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="brand">
+                <span class="brand-mark"><b>A</b><i>A</i></span>
+                <span class="brand-text"><strong>Ayesiga Abel</strong><small>IT Specialist</small></span>
+            </a>
+            <nav class="main-nav" id="main-nav" aria-label="Main">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="experience.html" class="active">Experience</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="certificates.html">Certificates</a></li>
+                    <!-- TODO: add your CV to the project folder as cv.pdf (or change this link) -->
+                    <li class="nav-cta-mobile"><a href="cv.pdf" class="btn btn-red" download>Download CV</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <!-- TODO: add your CV to the project folder as cv.pdf (or change this link) -->
+                <a href="cv.pdf" class="btn btn-red header-cta" download>Download CV <i class="fas fa-download"></i></a>
+                <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-head">
+            <div class="container">
+                <p class="eyebrow red">Where I've Worked</p>
+                <h1 class="section-title">Professional <em>Experience</em></h1>
+            </div>
+        </section>
+
+        <section class="section alt" style="padding-top:56px;">
+            <div class="container">
+                <div class="exp-grid" style="margin-top:0;">
+
+                    <!-- 01 · Tier Data — current role -->
+                    <div class="exp-card">
+                        <div class="exp-title">IT Support Officer &amp; Security Analyst</div>
+                        <div class="exp-company">Tier Data Limited · Kenya</div>
+                        <div class="exp-dates">July 2026 – Present</div>
+                        <ul class="exp-points">
+                            <li>Install, configure, troubleshoot and maintain computers, software, printers and other ICT equipment.</li>
+                            <li>Monitor endpoint security alerts, investigate suspicious activity and escalate complex incidents.</li>
+                            <li>Support the installation, updating and maintenance of endpoint security solutions and ICT systems.</li>
+                        </ul>
+                        <details class="exp-more">
+                            <summary>More responsibilities</summary>
+                            <ul class="exp-points">
+                                <li>Diagnose and resolve hardware, software, peripheral and network connectivity issues for reliable service delivery.</li>
+                                <li>Troubleshoot user access, application and system performance issues, keeping accurate technical documentation.</li>
+                                <li>Run user training and cybersecurity awareness sessions to promote secure technology practices.</li>
+                                <li>Perform preventive maintenance and routine checks on computers, network devices and ICT infrastructure.</li>
+                            </ul>
+                        </details>
+                    </div>
+
+                    <!-- 02 · Tier Data — earlier role -->
+                    <div class="exp-card">
+                        <div class="exp-title">ICT Support &amp; Network Officer</div>
+                        <div class="exp-company">Tier Data Limited · Kenya</div>
+                        <div class="exp-dates">August 2025 – June 2026</div>
+                        <ul class="exp-points">
+                            <li>Provided Tier I and Tier II support to over 150 users across four sites.</li>
+                            <li>Resolved 85% of monthly support tickets with a 95% first-contact resolution rate.</li>
+                            <li>Improved SLA tracking and incident handling, cutting average ticket resolution time from 30 minutes to five.</li>
+                        </ul>
+                        <details class="exp-more">
+                            <summary>More responsibilities</summary>
+                            <ul class="exp-points">
+                                <li>Installed, configured and maintained computers, network devices and ICT equipment across multiple sites.</li>
+                                <li>Installed and supported LAN, fiber, routers, switches, firewalls and SD-WAN infrastructure.</li>
+                                <li>Configured user accounts, Group Policy Objects (GPOs), endpoint updates and security settings.</li>
+                                <li>Coordinated network installations, structured cabling and equipment deployment at office and residential sites.</li>
+                                <li>Prepared technical reports, documented troubleshooting procedures and coordinated with vendors and contractors.</li>
+                            </ul>
+                        </details>
+                    </div>
+
+                    <!-- 03 · Stromme Foundation -->
+                    <div class="exp-card">
+                        <div class="exp-title">Global End User IT Support Specialist</div>
+                        <div class="exp-company">Stromme Foundation · Uganda</div>
+                        <div class="exp-dates">January 2025 – June 2025</div>
+                        <ul class="exp-points">
+                            <li>Supported over 200 users across five countries on hardware, software, network and access issues.</li>
+                            <li>Supported Windows 10/11 upgrades and device deployments across multiple country offices.</li>
+                            <li>Maintained ICT asset registers, incident logs and technical documentation.</li>
+                        </ul>
+                        <details class="exp-more">
+                            <summary>More responsibilities</summary>
+                            <ul class="exp-points">
+                                <li>Installed, configured, upgraded and maintained desktops, laptops, printers and office ICT equipment.</li>
+                                <li>Provided first- and second-line support for hardware, software, OS and network issues.</li>
+                                <li>Installed and troubleshot wired and wireless networks and meeting-room equipment.</li>
+                                <li>Developed user guides and trained staff on ICT equipment and basic troubleshooting.</li>
+                                <li>Assisted with equipment requisitions, deployment planning and monthly technical reporting.</li>
+                            </ul>
+                        </details>
+                    </div>
+
+                    <!-- 04 · Osela Technologies -->
+                    <div class="exp-card">
+                        <div class="exp-title">SAP B1 User Support Specialist</div>
+                        <div class="exp-company">Osela Technologies · Uganda</div>
+                        <div class="exp-dates">July 2024 – December 2024</div>
+                        <ul class="exp-points">
+                            <li>Installed, configured and supported SAP Business One and SAP HANA applications for end users.</li>
+                            <li>Diagnosed application errors, access issues, performance problems and database faults.</li>
+                            <li>Provided end-user training and support during system updates and implementation.</li>
+                        </ul>
+                        <details class="exp-more">
+                            <summary>More responsibilities</summary>
+                            <ul class="exp-points">
+                                <li>Assisted with software implementation, system configuration and testing.</li>
+                                <li>Gathered user requirements and supported ICT solution configuration.</li>
+                                <li>Prepared technical documentation and worked with consultants and project teams.</li>
+                            </ul>
+                        </details>
+                    </div>
+
+                    <!-- 05 · SEMA — Technology Assistant -->
+                    <div class="exp-card">
+                        <div class="exp-title">Technology Assistant</div>
+                        <div class="exp-company">SEMA East Africa · Uganda</div>
+                        <div class="exp-dates">Sep 2023 – Sep 2024 · Part-time</div>
+                        <ul class="exp-points">
+                            <li>Assembled electronic feedback devices and installed or updated firmware.</li>
+                            <li>Monitored deployed devices through web dashboards and diagnosed faults.</li>
+                            <li>Assisted with equipment maintenance, field deployment and troubleshooting.</li>
+                        </ul>
+                    </div>
+
+                    <!-- 06 · SEMA — Research Assistant -->
+                    <div class="exp-card">
+                        <div class="exp-title">Research Assistant</div>
+                        <div class="exp-company">SEMA East Africa · Uganda</div>
+                        <div class="exp-dates">Sep 2023 – Sep 2024 · Part-time</div>
+                        <ul class="exp-points">
+                            <li>Collected field data and prepared reports on service delivery and user feedback.</li>
+                            <li>Trained incoming trainees in device assembly, firmware updates and data collection.</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <!-- Professional Skills (horizontal card) -->
+                <div class="skills-wide-card exp-card">
+                    <div class="skills-wide-head">
+                        <div class="exp-num">EXPERTISE</div>
+                        <h2 class="skills-wide-title">Professional Skills</h2>
+                    </div>
+
+                    <div class="skills-wide-grid">
+                        <div class="skills-wide-item">
+                            <strong><i class="fas fa-headset"></i> ICT Technical Support</strong>
+                            <span>First- and second-line support, hardware and software troubleshooting, incident management, fault diagnosis and end-user assistance.</span>
+                        </div>
+                        <div class="skills-wide-item">
+                            <strong><i class="fas fa-laptop-code"></i> Computer Systems &amp; Maintenance</strong>
+                            <span>Installation, configuration, upgrading, repair and preventive maintenance of desktops, laptops, printers, operating systems and ICT peripherals.</span>
+                        </div>
+                        <div class="skills-wide-item">
+                            <strong><i class="fas fa-network-wired"></i> Networking &amp; Infrastructure</strong>
+                            <span>LAN/WAN, TCP/IP, structured cabling, routers, switches, wireless networks, fiber connectivity, firewalls and SD-WAN.</span>
+                        </div>
+                        <div class="skills-wide-item">
+                            <strong><i class="fas fa-server"></i> Systems Administration</strong>
+                            <span>Windows environments, Microsoft 365, Active Directory, Microsoft Entra ID, user account administration, permissions and Group Policy.</span>
+                        </div>
+                        <div class="skills-wide-item">
+                            <strong><i class="fas fa-diagram-project"></i> ICT Projects &amp; Deployment</strong>
+                            <span>ICT equipment installation, network infrastructure deployment, system configuration, technology implementation and technical quality checks.</span>
+                        </div>
+                        <div class="skills-wide-item">
+                            <strong><i class="fas fa-window-restore"></i> Software &amp; Application Support</strong>
+                            <span>SAP Business One, SAP HANA, Microsoft Office applications, application configuration, troubleshooting and user training.</span>
+                        </div>
+                        <div class="skills-wide-item">
+                            <strong><i class="fas fa-shield-alt"></i> Cybersecurity &amp; IT Security</strong>
+                            <span>Endpoint protection, antivirus/EDR, security monitoring, patch management, access control, data protection and security awareness.</span>
+                        </div>
+                        <div class="skills-wide-item">
+                            <strong><i class="fas fa-file-lines"></i> Technical Documentation</strong>
+                            <span>ICT asset management, incident reports, maintenance records, troubleshooting procedures and user guides.</span>
+                        </div>
+                        <div class="skills-wide-item">
+                            <strong><i class="fas fa-people-group"></i> Client &amp; End-User Support</strong>
+                            <span>User engagement, technical communication, problem-solving, training and coordination with vendors and project teams.</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-wide-tools">
+                        <span class="skills-wide-tools-label">Tools &amp; technologies</span>
+                        <div class="tool-chips">
+                            <span>Microsoft 365</span>
+                            <span>Windows</span>
+                            <span>Active Directory</span>
+                            <span>Azure AD / Microsoft Entra ID</span>
+                            <span>Cisco networking</span>
+                            <span>Fortinet</span>
+                            <span>Bitdefender</span>
+                            <span>SAP Business One</span>
+                            <span>SAP HANA</span>
+                            <span>CCTV</span>
+                            <span>Physical access control</span>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="skills.html" class="btn btn-red">View My Skills <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Ayesiga Abel · Entebbe, Uganda</p>
+            <p>Designed with <i class="fas fa-heart"></i> for connections.</p>
+        </div>
+    </footer>
+
+    <script src="site.js"></script>
+    <script>
+        // Give every role card the height of the tallest closed card
+        function equalizeCards() {
+            var cards = document.querySelectorAll('.exp-grid .exp-card');
+            if (!cards.length) return;
+
+            cards.forEach(function (c) { c.style.minHeight = ''; });
+            if (window.innerWidth <= 700) return;   // no forced height on phones
+
+            var open = document.querySelectorAll('.exp-more[open]');
+            open.forEach(function (d) { d.removeAttribute('open'); });
+
+            var tallest = 0;
+            cards.forEach(function (c) { tallest = Math.max(tallest, c.offsetHeight); });
+            cards.forEach(function (c) { c.style.minHeight = tallest + 'px'; });
+
+            open.forEach(function (d) { d.setAttribute('open', ''); });
+        }
+
+        window.addEventListener('load', equalizeCards);
+        window.addEventListener('resize', equalizeCards);
+    </script>
+</body>
+</html>
