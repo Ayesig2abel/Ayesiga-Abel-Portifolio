@@ -891,3 +891,23 @@ ul { list-style: none; }
 @media (max-width: 700px) {
     .exp-card { min-height: 0; }   /* no forced height on phones */
 }
+/* Project cards: same columns, gap and breakpoint as the skill cards */
+.work-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* Cards in the same row stretch to equal height */
+.work-card {
+    display: flex;
+    flex-direction: column;
+}
+.work-body {
+    flex: 1;
+    align-items: flex-start;   /* keep the arrow at the top beside the title */
+    gap: 12px;
+}
+
+@media (max-width: 900px) {
+    .work-grid { grid-template-columns: 1fr; }
+}
